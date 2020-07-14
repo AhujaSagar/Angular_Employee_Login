@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
-import { Router } from '@angular/router';
-
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +12,13 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
-
+  retUrl:string="dashboard";
+ 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService, 
-    private router: Router
+    private router: Router,
+    private activatedRoute:ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -25,6 +26,11 @@ export class LoginComponent implements OnInit {
       email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
       password: [null, Validators.required]
     });
+    this.activatedRoute.queryParamMap
+                .subscribe(params => {
+            this.retUrl = params.get('retUrl'); 
+            console.log( 'LoginComponent/ngOnInit '+ this.retUrl);
+        });
   }
 
   submit() {
@@ -33,7 +39,7 @@ export class LoginComponent implements OnInit {
     }
     console.log(this.loginForm.value);
       const val = this.loginForm.value;
-
+    
           if (this.authService.login(val.email, val.password))
              {
                       console.log("User is logged in");
