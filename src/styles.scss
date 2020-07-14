@@ -1,4 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+*{
+    font-family: 'Lato', sans-serif;
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;background: #F0F3F5;}
+h1{
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+.mat-list-base{
+    display: flex !important;
+    padding-top: 0px !important;
+    position: absolute;
+    right: 0;
+    
+}
+.mat-button{
+    font-size:24px;
+        line-height: 58px !important;
+}
+.mat-toolbar{
+    background-color: #954adb !important;
+}
+.mat-list-base .mat-list-item{
+    color: #fff !important;
+}
+.content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:600px){
+    .mat-list-base .mat-list-item .mat-list-item-content{
+        padding: 0 !important;
+    }
+    .mat-list-base{
+        right: initial;
+        width:100% !important;
+
+    }
+    .mat-toolbar-single-row{
+    padding: 0 !important;
+    }
+    .mat-button{
+    font-size: 18px !important;
+    }
+}
+
+html,body{height:100%;}
+body{margin:0;font-family:Roboto, "Helvetica Neue", sans-serif;}
+form{width:420px;margin:35px auto 100px;display:block;float:none;}
+.mat-form-field{width:100%;}
+.misc-bottom-padding{margin:8px 0 20px;}
+.misc-bottom-padding mat-label{margin-right:15px;}
+.mat-radio-label{margin:0 15px 0 0;}
+.title-center{margin:0 auto;}
+.button-wrapper{margin-top:10px;}
