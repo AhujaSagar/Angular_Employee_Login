@@ -6,7 +6,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+img{
+  height: 50px;
+  width: 50px;
+  float: left;
+}
   table {
     width: 100%;
   }
@@ -24,6 +28,7 @@
   .nav{
       font-size: large;
       text-align: center;
+      overflow: hidden; /* Hide scrollbars */
   }
   .nav>a{
       color: black;

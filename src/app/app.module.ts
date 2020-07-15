@@ -19,12 +19,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import {HttpClientModule} from '@angular/common/http';
-// import { JwtModule } from '@auth0/angular-jwt';
-// import { from } from 'rxjs';
-// // ...
-// export function tokenGetter() {
-//   return localStorage.getItem('accessToken');
-// }
+import { AgeLabelPipe } from './age-label.pipe';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { HighlightDirective } from './highlight.directive';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+
+import { CdkTableModule} from '@angular/cdk/table';
+import {DataSource} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,10 @@ import {HttpClientModule} from '@angular/common/http';
     AboutComponent,
     ContactComponent,
    LoginComponent,
+   EmployeesComponent,
+   EmployeeComponent,
+   AgeLabelPipe,
+   HighlightDirective,
 
   ],
   imports: [
@@ -46,13 +53,9 @@ import {HttpClientModule} from '@angular/common/http';
     MatListModule,
     HttpClientModule,
     RouterModule,
-    // JwtModule.forRoot({
-    //   config: {
-    //     tokenGetter: tokenGetter,
-      
-    //   }
-    // })
-   
+    MatTableModule,
+    MatCardModule,
+    CdkTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

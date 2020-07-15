@@ -1,0 +1,30 @@
+@import '_mixin.scss';
+
+.mat-row:nth-child(odd){
+    @include odd(silver);
+}
+
+.mat-header-cell{
+    font-style: bolder;
+    font-size: large;
+    position: relative;
+}
+
+.mat-button{
+    margin-left: -1rem;
+}
+.scrollbar{
+    overflow-y: auto;
+    height:  -webkit-calc(100vh - 100px);
+    height:  calc(100vh - 100px);
+}
+
+
+.scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.scrollbar {
+    -ms-overflow-style: none;
+}

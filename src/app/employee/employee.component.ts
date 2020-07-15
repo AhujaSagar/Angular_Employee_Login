@@ -18,7 +18,7 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const employeeId: number = +params.get('id');
+      const employeeId: string = params.get('id');
       this.employeeService.getEmployeeDetail(employeeId).subscribe(employee => {
         this.employee = employee;
       });

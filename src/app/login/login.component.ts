@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
 import { Router,ActivatedRoute } from '@angular/router';
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService, 
     private router: Router,
-    private activatedRoute:ActivatedRoute
+    private activatedRoute:ActivatedRoute,
   ) { }
 
   ngOnInit() {
@@ -43,9 +43,9 @@ export class LoginComponent implements OnInit {
           if (this.authService.login(val.email, val.password))
              {
                       console.log("User is logged in");
-                      this.router.navigateByUrl('/dashboard');
-              }     
-      
+                      this.router.navigateByUrl('/employees');
+              }
+              
   }
 
 }

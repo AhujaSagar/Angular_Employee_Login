@@ -23,7 +23,6 @@ export class AuthService {
       console.log('hi from service provider')
       if(email==="s@gmail.com" && password==="c"){
         localStorage.setItem('accessToken',email);
-        localStorage.setItem('password', 'c');
         return true;
             // this is just the HTTP call, 
             // we still need to handle the reception of the token
