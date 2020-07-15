@@ -1,6 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import  { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable(
   {
@@ -20,7 +22,7 @@ export class AuthService {
     login(email:string, password:string ) {
       console.log('hi from service provider')
       if(email==="s@gmail.com" && password==="c"){
-        localStorage.setItem('email','s@gmail.com');
+        localStorage.setItem('accessToken',email);
         localStorage.setItem('password', 'c');
         return true;
             // this is just the HTTP call, 
@@ -30,4 +32,14 @@ export class AuthService {
        return false;
     }
 }
+// login(email: string, password: string): Observable<boolean> {
+//   return this.http.post<{token: string}>('/api/auth', {username: email, password: password})
+//     .pipe(
+//       map(result => {
+//         localStorage.setItem('access_token', result.token);
+//         return true;
+//       })
+//     );
+// }
+
 } 

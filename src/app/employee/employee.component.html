@@ -1,0 +1,19 @@
+<mat-card *ngIf="employee">
+    <mat-card-title appHighlight>
+        {{employee.employee_name}}
+    </mat-card-title>
+    <mat-card-content>
+        <div class="mat-body-1">
+            Salary
+        </div>
+        <div class="mat-body-2">
+            {{employee.employee_salary | currency: 'USD'}}&nbsp;
+        </div>
+        <div class="mat-body-1">
+            Age
+        </div>
+        <div class="mat-body-2">
+            {{employee.employee_age | ageLabel}}&nbsp;
+        </div>
+    </mat-card-content>
+</mat-card>

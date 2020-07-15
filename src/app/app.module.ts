@@ -13,13 +13,18 @@ import { AngularMaterialModule } from './material.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-
+import {RouterModule} from '@angular/router'
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import {HttpClientModule} from '@angular/common/http';
-
+// import { JwtModule } from '@auth0/angular-jwt';
+// import { from } from 'rxjs';
+// // ...
+// export function tokenGetter() {
+//   return localStorage.getItem('accessToken');
+// }
 
 @NgModule({
   declarations: [
@@ -39,7 +44,14 @@ import {HttpClientModule} from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: tokenGetter,
+      
+    //   }
+    // })
    
   ],
   providers: [],
