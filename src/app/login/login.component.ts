@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
-      password: [null, Validators.required]
+      password: [null, [Validators.required,  Validators.minLength(8)]  ]
     });
     this.activatedRoute.queryParamMap
                 .subscribe(params => {

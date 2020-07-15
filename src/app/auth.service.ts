@@ -21,7 +21,7 @@ export class AuthService {
 
     login(email:string, password:string ) {
       console.log('hi from service provider')
-      if(email==="s@gmail.com" && password==="c"){
+      if(email==="sagarahuja520@gmail.com" && password==="crackEDS"){
         localStorage.setItem('accessToken',email);
         return true;
             // this is just the HTTP call, 
